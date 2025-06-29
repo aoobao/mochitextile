@@ -1,0 +1,104 @@
+
+.toggleMenu {
+    display:  none;
+    background: #111;
+    padding: 10px 15px;
+    color: #fff;
+}
+.nav {
+    list-style: none;
+     *zoom: 1;
+    margin:0;
+    padding:0;
+}
+.nav a, .nav a:hover {text-decoration: none; }
+.nav:before,
+.nav:after {
+    content: " "; 
+    display: table; 
+}
+.nav:after {
+    clear: both;
+}
+.nav ul {
+    list-style: none;
+    width: 12em;
+    margin:0;
+    padding:0;
+}
+.nav a {
+    padding: 15px;
+    color:#fff;
+}
+.nav li {
+    position: relative;
+}
+.nav > li {
+    float: left;
+    padding: 5px 0px;
+}
+.nav > li > .parent {
+    /** background-image: url("../images/downArrow.png"); */
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.nav > li > a {
+    display: block;
+    padding: 15px;
+}
+.nav li  ul {
+    position: absolute;
+    left: -9999px;
+}
+.nav > li.hover > ul {
+    left:0;
+}
+.nav li li.hover ul {
+    left:100%;
+    top: 0;
+}
+.nav li li a {
+    display: block;
+    background: #ddd;
+    position: relative;
+    z-index:100;
+    color:#222;
+    border:0;
+    border-bottom: 1px dotted #bbb;
+    padding: 15px;
+    line-height: 1.5em;
+}
+.nav li li:last-child a{border:0;}
+.nav li li a:hover{background:#eee}
+
+.nav li li li a {
+    background:#eee;
+    color:#222;
+    z-index:200;
+    border-top: 1px solid #555;
+}
+.nav li li li a:hover {background:#f5f5f5;}
+@media screen and (max-width: 768px) {
+    .active {
+        display: block;
+    }
+    .nav > li {
+        float: none;
+    }
+    .nav > li > .parent {
+        background-position: 95% 50%;
+    }
+    .nav li li .parent {
+        /** background-image: url("../images/downArrow.png"); */
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+    .nav ul {
+        display: block;
+        width: 100%;
+    }
+   .nav > li.hover > ul , .nav li li.hover ul {
+        position: static;
+    }
+
+}
